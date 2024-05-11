@@ -1,28 +1,14 @@
 package com.example.myapplication;
 
 import android.os.Bundle;
-
-import com.google.android.material.snackbar.Snackbar;
-
 import androidx.appcompat.app.AppCompatActivity;
-
+import android.util.Log;
 import android.view.View;
-
-import androidx.core.view.WindowCompat;
-import androidx.navigation.NavController;
-import androidx.navigation.Navigation;
-import androidx.navigation.ui.AppBarConfiguration;
-import androidx.navigation.ui.NavigationUI;
-
-import com.example.myapplication.databinding.ActivityMainBinding;
-
-import android.view.Menu;
-import android.view.MenuItem;
 import android.widget.TextView;
-
 import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.Statement;
+import java.util.Objects;
 
 public class MainActivity extends AppCompatActivity {
     Connection connect;
@@ -45,7 +31,7 @@ public class MainActivity extends AppCompatActivity {
             connect = connectHelper.connectionclass();
             if(connect != null)
             {
-                String query = "Select from Product";
+                String query = "Select * from Product";
                 Statement st = connect.createStatement();
                 ResultSet rs = st.executeQuery(query);
 
@@ -62,7 +48,7 @@ public class MainActivity extends AppCompatActivity {
             }
         }
         catch (Exception ex){
-
+            Log.e("error", Objects.requireNonNull(ex.getMessage()));
         }
     }
 

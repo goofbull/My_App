@@ -6,6 +6,7 @@ import android.util.Log;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
+import java.util.Objects;
 
 public class ConnectHelper {
     Connection con;
@@ -30,7 +31,7 @@ public class ConnectHelper {
             connection = DriverManager.getConnection(ConnectionURL);
         }
         catch (Exception ex){
-            Log.e("Error", ex.getMessage());
+            Log.e("Error", Objects.requireNonNull(ex.getMessage()));
         }
         return connection;
     }
