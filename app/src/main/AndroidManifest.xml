@@ -4,7 +4,7 @@
 
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
-    <uses-permission android:name = "androidpermission.CAMERA"/>
+    <uses-permission android:name="androidpermission.CAMERA" />
 
     <application
         android:allowBackup="true"
@@ -16,6 +16,16 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.MyApplication"
         tools:targetApi="31">
+        <activity
+            android:name=".MainPage"
+            android:exported="false"
+            android:label="@string/title_activity_main_page"
+            android:theme="@style/Theme.MyApplication" />
+        <activity
+            android:name=".LoginPage"
+            android:exported="false"
+            android:label="@string/title_activity_login_page"
+            android:theme="@style/Theme.MyApplication" />
         <activity
             android:name=".QRScann"
             android:exported="false"
@@ -32,10 +42,11 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".CaptureAct"
+        <activity
+            android:name=".CaptureAct"
             android:screenOrientation="portrait"
             android:stateNotNeeded="true"
-            android:theme="@style/zxing_CaptureTheme"/>
+            android:theme="@style/zxing_CaptureTheme" />
     </application>
 
 </manifest>

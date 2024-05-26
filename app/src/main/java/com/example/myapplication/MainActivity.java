@@ -1,70 +1,47 @@
 package com.example.myapplication;
 
-import android.content.Intent;
 import android.os.Bundle;
+
+import com.google.android.material.snackbar.Snackbar;
+
 import androidx.appcompat.app.AppCompatActivity;
-import android.util.Log;
+
 import android.view.View;
 import android.widget.Button;
-import android.widget.TextView;
-import java.sql.Connection;
-import java.sql.ResultSet;
-import java.sql.Statement;
-import java.util.Objects;
+import android.widget.EditText;
+import android.widget.Toast;
+
+import androidx.core.view.WindowCompat;
+import androidx.navigation.NavController;
+import androidx.navigation.Navigation;
+import androidx.navigation.ui.AppBarConfiguration;
+import androidx.navigation.ui.NavigationUI;
+
+import com.example.myapplication.databinding.ActivityLoginPageBinding;
 
 public class MainActivity extends AppCompatActivity {
-    Connection connect;
-    String ConnectionResult= "";
+    EditText username;
+    EditText password;
+    Button loginButton;
+
     @Override
-    protected void onCreate(Bundle savedInstance){
-        super.onCreate(savedInstance);
-        setContentView(R.layout.activity_main);
+    protected void onCreate(Bundle savedInstanceState){
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_login_page);
 
-        configureGoToQRButton();
-    }
+        username = findViewById(R.id.username);
+        password = findViewById(R.id.password);
+        loginButton = findViewById(R.id.loginButton);
 
-    private void configureGoToQRButton()
-    {
-        Button btnGoToQR = (Button) findViewById(R.id.btnGoToQR);
-        btnGoToQR.setOnClickListener(new View.OnClickListener() {
+        loginButton.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View view) {
-                startActivity(new Intent(MainActivity.this, QRScann.class));
+            public void onClick(View view){
+                if(username.getText().toString().equals("user") && password.getText().toString().equals("1234")){
+                    Toast.makeText(MainActivity.this,"Login Successful!", Toast.LENGTH_SHORT).show();
+                } else {
+                    Toast.makeText(MainActivity.this, "Login Failed!", Toast.LENGTH_SHORT).show();
+                }
             }
         });
     }
-
-    public void GetTextFromSQL(View v)
-    {
-        TextView tx1 = (TextView) findViewById(R.id.textView);
-        TextView tx2 = (TextView) findViewById(R.id.textView2);
-        TextView tx3 = (TextView) findViewById(R.id.textView3);
-        TextView tx4 = (TextView) findViewById(R.id.textView4);
-
-        try {
-            ConnectHelper connectHelper = new ConnectHelper();
-            connect = connectHelper.connectionclass();
-            if(connect != null)
-            {
-                String query = "Select * from Product";
-                Statement st = connect.createStatement();
-                ResultSet rs = st.executeQuery(query);
-
-                while(rs.next())
-                {
-                    tx1.setText(rs.getString(1));
-                    tx2.setText(rs.getString(2));
-                    tx3.setText(rs.getString(3));
-                    tx4.setText(rs.getString(4));
-                }
-            }
-            else{
-                ConnectionResult = "Check Connection";
-            }
-        }
-        catch (Exception ex){
-            Log.e("error", Objects.requireNonNull(ex.getMessage()));
-        }
-    }
-
 }

@@ -8,19 +8,43 @@
     android:background="#C4CAC8"
     tools:context=".QRScann">
 
-    <Button
-        android:id="@+id/btn_scan"
-        android:layout_width="match_parent"
-        android:layout_height="96dp"
+    <ImageView
+        android:id="@+id/imageView4"
+        android:layout_width="398dp"
+        android:layout_height="345dp"
+        android:layout_alignParentStart="true"
         android:layout_alignParentEnd="true"
         android:layout_alignParentBottom="true"
-        android:layout_marginEnd="0dp"
-        android:layout_marginBottom="304dp"
+        android:layout_marginStart="6dp"
+        android:layout_marginEnd="7dp"
+        android:layout_marginBottom="293dp"
+        app:srcCompat="@mipmap/comp13" />
+
+    <ImageView
+        android:id="@+id/imageView6"
+        android:layout_width="302dp"
+        android:layout_height="349dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="60dp"
+        android:layout_marginEnd="49dp"
+        android:layout_marginBottom="326dp"
+        app:srcCompat="@mipmap/comp16" />
+
+    <Button
+        android:id="@+id/btn_scan"
+        android:layout_width="269dp"
+        android:layout_height="58dp"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginEnd="68dp"
+        android:layout_marginBottom="83dp"
         android:gravity="center"
         android:text="Scan"></Button>
 
     <Button
-        android:id="@+id/button2"
+        android:id="@+id/btn_Profile"
         android:layout_width="168dp"
         android:layout_height="59dp"
         android:layout_alignParentStart="true"
@@ -35,7 +59,7 @@
         app:icon="@mipmap/user" />
 
     <Button
-        android:id="@+id/button3"
+        android:id="@+id/btn_Goods"
         android:layout_width="164dp"
         android:layout_height="59dp"
         android:layout_alignParentStart="true"
@@ -48,7 +72,7 @@
         app:icon="@mipmap/goods" />
 
     <Button
-        android:id="@+id/button4"
+        android:id="@+id/btn_Staff"
         android:layout_width="wrap_content"
         android:layout_height="59dp"
         android:layout_alignParentStart="true"
@@ -61,7 +85,7 @@
         app:icon="@mipmap/group" />
 
     <Button
-        android:id="@+id/button5"
+        android:id="@+id/btn_Settings"
         android:layout_width="166dp"
         android:layout_height="58dp"
         android:layout_alignParentStart="true"
@@ -92,5 +116,53 @@
         android:layout_marginTop="-109dp"
         android:layout_marginBottom="600dp"
         app:srcCompat="@mipmap/comp27" />
+
+    <ImageView
+        android:id="@+id/imageView2"
+        android:layout_width="179dp"
+        android:layout_height="20dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="116dp"
+        android:layout_marginEnd="116dp"
+        android:layout_marginBottom="676dp"
+        app:srcCompat="@mipmap/comp28" />
+
+    <ImageView
+        android:id="@+id/imageView3"
+        android:layout_width="124dp"
+        android:layout_height="20dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="39dp"
+        android:layout_marginEnd="248dp"
+        android:layout_marginBottom="700dp"
+        app:srcCompat="@mipmap/comp29" />
+
+    <ImageView
+        android:id="@+id/imageView5"
+        android:layout_width="274dp"
+        android:layout_height="28dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="32dp"
+        android:layout_marginEnd="105dp"
+        android:layout_marginBottom="574dp"
+        app:srcCompat="@mipmap/comp15" />
+
+    <Button
+        android:id="@+id/btn_ChangeStatus"
+        android:layout_width="237dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="86dp"
+        android:layout_marginEnd="88dp"
+        android:layout_marginBottom="312dp"
+        android:text="Change status" />
 
 </RelativeLayout>
