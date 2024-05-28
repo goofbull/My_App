@@ -1,3 +1,4 @@
+/*
 package com.example.myapplication;
 
 import android.os.Bundle;
@@ -38,7 +39,7 @@ public class QRScann extends AppCompatActivity {
         });
     }
 
-    private void scanCode()
+    private void scanCode()`
     {
         ScanOptions options = new ScanOptions();
         options.setPrompt("Volume up to flash on");
@@ -64,4 +65,4 @@ public class QRScann extends AppCompatActivity {
             }).show();
         }
     });
-}
+}*/

@@ -29,7 +29,7 @@ public class MainPage extends AppCompatActivity {
         btnGoToQR.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                startActivity(new Intent(MainPage.this, QRScann.class));
+                startActivity(new Intent(MainPage.this, ScanActivity.class));
             }
         });
     }
